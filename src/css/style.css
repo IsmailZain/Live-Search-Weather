@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600&display=swap');
+*{
+    margin:0;
+    padding:0;
+    font-family: 'Lora', serif;
+}
+
+
+.main{
+    background-color: #b6b3b3;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+
+}
+.card{
+    background-color: rgb(107, 147, 207);
+    width: 20vw;
+    min-height: 60vh;
+    border-radius: 17px;
+    box-shadow: 3px 4px 15px gray;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+   
+    
+}
+.field{
+    margin-top: 10px;
+   font-size: 25px;
+   outline: none;
+   border-radius: 20px;
+   padding: 3px;
+   padding-left: 10px;
+    width: 65%;
+    font-weight: 400;
+    text-align: center;
+  
+}
+.wave{
+    opacity: 0.3;
+    position: absolute;
+    top: 132%;
+    left: 50%;
+    background: white;
+    width: 50rem;
+    height: 50rem;
+    margin-left: -25rem;
+    margin-top: -20rem;
+    transform-origin: 43%;
+    border-radius: 43%;
+    animation: drift1 3000ms infinite linear;
+    z-index: 1 !important;
+    
+}
+
+.wave.-three {
+    animation: drift1 4000ms infinite linear;
+    opacity:  0.2;
+    z-index: 2 !important;
+}
+.wave.-two {
+    animation: drift1 5000ms infinite linear;
+    z-index: 3 !important;
+    opacity: 0.1;
+}
+@keyframes drift1{
+    form { transform: rotate(0deg);}
+    from {transform: rotate(360deg);}
+}
+.location{
+    font-size: 3rem;
+    text-transform: uppercase;
+}
+.info{
+    margin-top: 40%;
+}
+.temp{
+    margin-top: 10px;
+    font-size: 24px;
+    font-weight: 800;
+}
+.temp_minmax{
+    margin-top: 10px;
+    font-size: 1.2rem;
+    font-weight: 400;
+}
+.icon{
+    animation: vibrate 1000ms infinite linear;
+}
+.datanotfound{
+    font-size: 2rem;
+    margin-top: 89px;
+    color: #361313;
+}
+@keyframes vibrate{
+    0% { transform: translateX(0px);}
+    25% {transform: translateX(+10px);}
+    50%  { transform: translateX(0px);}
+    75% {transform: translateX(-10px);}
+    100%  { transform: translateX(0px);}
+}
+
+@media only screen and (max-width: 1283px) {
+    .card{
+      
+        width: 30vw;
+    }
+    
+  }
+
+  @media only screen and (max-width: 819px) {
+    .card{
+     
+        width: 40vw;
+    }
+    
+  }
+
+  
+  @media only screen and (max-width: 603px) {
+    .card{
+     
+        width: 60vw;
+    }
+    
+  }
+
+  @media only screen and (max-width: 406px) {
+    .card{
+     
+        width: 80vw;
+    }
+    
+  }
