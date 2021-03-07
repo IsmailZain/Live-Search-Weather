@@ -10,7 +10,7 @@ function App() {
   },[])
   useEffect(() => {
     const fetchApi = async () => {
-      const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${field}&appid=9d3b063799ebb1b67bf96d024de5eddc`)
+      const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${field}&appid=9d3b063799ebb1b67bf96d024de5eddc&units=metric`)
       const resJson = await res.json()
       
       await setcity(resJson.main || null)
@@ -38,7 +38,7 @@ function App() {
                 <h2 className="location">
                   <i className="fas fa-street-view icon"></i> {field}</h2>
                 <h1 className="temp">
-                  {city.temp}</h1>
+                  {city.temp} °Cel</h1>
                 <h3 className="temp_minmax"> Min : {city.temp_min}°Cel | Max : {city.temp_max}°Cel</h3>
               </div>
 
