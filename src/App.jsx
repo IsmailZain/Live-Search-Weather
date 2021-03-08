@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 import './App.css';
 import './css/style.css'
 
+
 function App() {
   const [field, setfield] = useState("")
   const [city, setcity] = useState(null)
@@ -9,8 +10,9 @@ function App() {
     document.title = "Live Search Weather"
   },[])
   useEffect(() => {
+    
     const fetchApi = async () => {
-      const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${field}&appid=9d3b063799ebb1b67bf96d024de5eddc&units=metric`)
+      const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${field}&appid=${process.env.REACT_APP_KEY}&units=metric`)
       const resJson = await res.json()
       
       await setcity(resJson.main || null)
